@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 20px;
+}
+
+.main-title {
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.tasks-link {
+  text-decoration: none;
+}
