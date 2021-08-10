@@ -227,3 +227,18 @@
 // }
 // const arr = [17, 12, 8, 3, 4, 5, 9, 5, 11];
 // console.log(minElem(arr));
+
+//Write a JavaScript program which accept a string as input and swap the case of each character.
+// For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+
+function reverse(str) {
+  // const splitStr = str.split("");
+  // const reverseArray = splitStr.reverse();
+  // const result = reverseArray.join("");
+
+  const result = str.split("").reverse().join("");
+  return result;
+}
+
+const str = "Stupid tasks";
+console.log(reverse(str));
