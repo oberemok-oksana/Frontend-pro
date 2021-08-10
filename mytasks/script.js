@@ -190,3 +190,10 @@
 // "Red,Green,White,Black"
 // "Red,Green,White,Black"
 // "Red+Green+White+Black"
+
+// Write a JavaScript program to sort the items of an array. Go to the editor
+
+const arr1 = [3, 8, 7, 6, 5, -4, 3, 2, 1];
+const sortedArr = arr1.sort();
+console.log(sortedArr); //[-4, 1, 2, 3, 3, 5, 6, 7, 8];
+// Sample Output : -4,-3,1,2,3,5,6,7,8
