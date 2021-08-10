@@ -213,3 +213,17 @@
 
 // const arr = [1, 12, 8, 3, 2, 5, 9, 5, 11];
 // console.log(maxElem(arr));
+
+//to find the min element  of an array.
+
+// function minElem(arr) {
+//   let minElem = arr[0];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < minElem) {
+//       minElem = arr[i];
+//     }
+//   }
+//   return minElem;
+// }
+// const arr = [17, 12, 8, 3, 4, 5, 9, 5, 11];
+// console.log(minElem(arr));
