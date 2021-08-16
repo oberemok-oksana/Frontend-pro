@@ -231,14 +231,43 @@
 //Write a JavaScript program which accept a string as input and swap the case of each character.
 // For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
 
-function reverse(str) {
-  // const splitStr = str.split("");
-  // const reverseArray = splitStr.reverse();
-  // const result = reverseArray.join("");
+// function reverse(str) {
+// const splitStr = str.split("");
+// const reverseArray = splitStr.reverse();
+// const result = reverseArray.join("");
 
-  const result = str.split("").reverse().join("");
-  return result;
-}
+//   const result = str.split("").reverse().join("");
+//   return result;
+// }
 
-const str = "Stupid tasks";
-console.log(reverse(str));
+// const str = "Stupid tasks";
+// console.log(reverse(str));
+
+// Какое число (длинну) мы получим?
+// let arr = ["Ivan", "Ishtvan", "Olya"];
+// let newArr = arr;
+// newArr.push("Petya");
+// console.log(arr.length); //4
+
+//СОздайте массив users  с элементами 'Ivan' и 'Ishtvan'
+// Добавьте 'Olya' в конец.
+// Замените в 'Ishtvan' на 'Petya'.
+// Ваш код для поиска значения должен работать для массивов с любой длиной
+// Удалите первый элемент массива и покажите его .
+// Вставьте 'Masha' и "Pasha" в начало массива
+
+// let users = ["Ivan", "Ishtvan"];
+// users.push("Olya"); // ["Ivan", "Ishtvan", "Olya"]
+// for (let i = 0; i < users.length; i++) {
+//   if (users[i] === "Ishtvan") {
+//     users[i] = "Petya";
+//   }
+// } // ["Ivan", "Petya", "Olya"]
+
+// console.log(users);
+// let elem = users.shift();
+// console.log(elem); // 'Ivan'
+// users.unshift("Masha", "Pasha");
+// console.log(users);// ["Masha", "Pasha", "Petya", "Olya"]
+
+//Task 3
