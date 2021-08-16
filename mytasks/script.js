@@ -284,7 +284,7 @@
 // console.log(arr);
 
 //Задача . Методы substr, substring, slice
-// Задача. Дана строка 'aaa bbb ccc'
+//  Дана строка 'aaa bbb ccc'
 //  Вырежите из нее слово 'bbb' тремя разными способами
 // (через substr, substring, slice).
 
@@ -295,3 +295,11 @@
 // console.log(second); //bbb
 // let third = str.slice(4, 7);
 // console.log(third); //bbb
+
+//Задача . Преобразование формата даты
+//  В переменной date лежит дата в формате '2025-12-31'.
+//  Преобразуйте эту дату в формат '31/12/2025'.
+// let date = "2025-12-31";
+// let reverse = date.split("-").reverse(); // ["31", "12", "2025"]
+// let result = reverse.join("/");
+// console.log(result);
