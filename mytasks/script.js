@@ -271,3 +271,8 @@
 // console.log(users);// ["Masha", "Pasha", "Petya", "Olya"]
 
 //Task 3
+// удалить элемент 'Ishtvan' и возвратить его в переменную
+// let arr = ["Ivan", "Ishtvan", "Olya"];
+// let deletedElem = arr.splice(1, 1).join();
+// console.log(deletedElem); // 'Ishtvan'
+// console.log(arr); //['Ivan', 'Ishtvan', 'Olya']
