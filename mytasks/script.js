@@ -276,3 +276,22 @@
 // let deletedElem = arr.splice(1, 1).join();
 // console.log(deletedElem); // 'Ishtvan'
 // console.log(arr); //['Ivan', 'Ishtvan', 'Olya']
+
+// Task 4
+//Сделать из строки массив
+// let str = "Ivan,Sonya,Olya";
+// let arr = str.split(",");
+// console.log(arr);
+
+//Задача . Методы substr, substring, slice
+// Задача. Дана строка 'aaa bbb ccc'
+//  Вырежите из нее слово 'bbb' тремя разными способами
+// (через substr, substring, slice).
+
+// let str = "aaa bbb ccc";
+// let first = str.substr(4, 3);
+// console.log(first); //bbb
+// let second = str.substring(4, 7);
+// console.log(second); //bbb
+// let third = str.slice(4, 7);
+// console.log(third); //bbb
