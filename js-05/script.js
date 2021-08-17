@@ -14,21 +14,44 @@
 // let str = prompt("Введите строку");
 // countSpace(str);
 
-function countSpaces(str) {
-  let spacesAmount = 0;
-  let linesAmount = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === " ") {
-      spacesAmount++;
+// function countSpaces(str) {
+//   let spacesAmount = 0;
+//   let linesAmount = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === " ") {
+//       spacesAmount++;
+//     }
+//     if (str[i] === "<") {
+//       let br = str.slice(i, i + 5);
+//       if (br === "<br/>") linesAmount++;
+//     }
+//   }
+//   alert(
+//     `Вы ввели стоку:${str}., в ней ${spacesAmount} пробелов и ${linesAmount} переводов строки»`
+//   );
+// }
+// let str = prompt("Введите строку");
+// countSpaces(str);
+
+// Написать функцию , которая принимает количество слов и генерирует текст из этого количества слов
+// Дополнительно*:
+// использовать Math.random() для генерации кода символа
+
+function makeWords(num) {
+  let words = "";
+
+  for (let j = 0; j < num; j++) {
+    let wordLength = Math.round(Math.random() * 9) + 1;
+
+    for (let i = 0; i < wordLength; i++) {
+      let code = Math.round(Math.random() * 25) + 97;
+      let symbol = String.fromCharCode(code);
+      words = words.concat(symbol);
     }
-    if (str[i] === "<") {
-      let br = str.slice(i, i + 5);
-      if (br === "<br/>") linesAmount++;
-    }
+    words = words + " ";
   }
-  alert(
-    `Вы ввели стоку:${str}., в ней ${spacesAmount} пробелов и ${linesAmount} переводов строки»`
-  );
+
+  return words;
 }
-let str = prompt("Введите строку");
-countSpaces(str);
+
+alert(makeWords(5));
