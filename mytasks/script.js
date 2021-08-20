@@ -321,3 +321,17 @@
 //   return sum;
 // }
 // console.log(sum([5, 3, -2]));
+
+// Дан массив с числами. Сделайте из него массив, состоящий из квадратов этих чисел.
+// function map(arr) {
+//   let newArr = arr.map((item) => item * item);
+//   return newArr;
+// }
+// console.log(map([5, 3, -2]));
+
+//Используя метод map() напишите код, который получает из массива строк новый массив, содержащий их длины.
+// function length(arr) {
+//   let lengthArr = arr.map((item) => item.length);
+//   return lengthArr;
+// }
+// console.log(length(["Oksana", "Vova", "Puma"]));
