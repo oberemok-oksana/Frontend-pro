@@ -414,7 +414,7 @@
 // console.log(filterFalse(arr));
 
 //Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из первых букв слов строки str.
-/
+
 // function firstLetters(str) {
 //   let arr = str.split(" ");
 //   let firstLetters = arr.map((item) => item[0]);
