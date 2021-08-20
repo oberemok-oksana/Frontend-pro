@@ -356,3 +356,70 @@
 //   return newArr;
 // }
 // console.log(map(str));
+
+//Дан массив с числами. Оставьте в нем только отрицательные числа
+// function onlyNegativeNumbers(arr) {
+//   let negativeNumbers = arr.filter((item) => item < 0);
+//   return negativeNumbers;
+// }
+// console.log(onlyNegativeNumbers([2, -1, 5, -8, 1, 4, -7]));
+
+//Дан массив с числами. Оставьте в нем только четные числа
+// function evenNumbers(arr) {
+//   let evenNumbers = arr.filter((item) => item % 2 === 0);
+//   return evenNumbers;
+// }
+// console.log(evenNumbers([2, -1, 5, -8, 1, 4, -7]));
+
+//Дан массив со строками. Оставьте в нем только те строки, длина которых больше 5-ти символов.
+// function strLength(arr) {
+//   let longStrings = arr.filter((item) => item.length > 5);
+//   return longStrings;
+// }
+// console.log(strLength(["Java", "JavaScript", "C++", "Phyton", "TypeScript"]));
+
+//Дан массив, в нем могут быть обычные элементы и подмассивы, например [1, 2, [3, 4], 5, [6, 7]].
+// Оставьте в нем только подмассивы.
+// function arrays(arr) {
+//   let arrays = arr.filter((item) => Array.isArray(item));
+//   return arrays;
+// }
+// let arr = [1, 2, [3, 4], 5, [6, 7], []];
+// console.log(arrays(arr));
+
+// Дан массив с числами. Посчитайте количество отрицательных чисел в этом массиве.
+// function countNegativeNumbers(arr) {
+//   let count = arr.filter((item) => item < 0);
+//   return count.length;
+// }
+// console.log(countNegativeNumbers([2, -1, 5, -8, 1, 4, -7]));
+
+//Напишите функцию filterFalse(arr),
+// которая очищает массив от ложных (false) значений: false, null, undefined, 0, –0, NaN и "" (пустя строка).
+// function filterFalse(arr) {
+//   let falseItems = arr.filter(
+//     (item) =>
+//       !Number.isNaN(item) &&
+//       item !== false &&
+//       item !== "" &&
+//       item !== undefined &&
+//       item !== null &&
+//       item !== 0 &&
+//       item !== -0
+//   );
+//   return falseItems;
+// }
+
+// arr = [NaN, 0, 77, false, -17, "", undefined, 99, null];
+// console.log(filterFalse(arr));
+
+//Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из первых букв слов строки str.
+/
+// function firstLetters(str) {
+//   let arr = str.split(" ");
+//   let firstLetters = arr.map((item) => item[0]);
+//   return firstLetters;
+// }
+
+// let str = "Каждый охотник желает знать, где сидит фазан.";
+// console.log(firstLetters(str));
