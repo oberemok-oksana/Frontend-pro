@@ -303,3 +303,21 @@
 // let reverse = date.split("-").reverse(); // ["31", "12", "2025"]
 // let result = reverse.join("/");
 // console.log(result);
+
+// Дан массив с числами. Создайте новый массив, состоящий из квадратов этих чисел.
+
+// function squareNumber(arr) {
+//   let newArr = [];
+//   arr.forEach((item) => newArr.push(item * item));
+//   return newArr;
+// }
+
+// console.log(squareNumber([2, 5, 5]));
+
+//Дан массив с числами. Найдите сумму этих чисел
+// function sum(arr) {
+//   let sum = 0;
+//   arr.forEach((item) => (sum = sum + item));
+//   return sum;
+// }
+// console.log(sum([5, 3, -2]));
