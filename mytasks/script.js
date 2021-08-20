@@ -335,3 +335,24 @@
 //   return lengthArr;
 // }
 // console.log(length(["Oksana", "Vova", "Puma"]));
+
+//Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из строк,
+//  состоящих из предыдущего, текущего и следующего символа строки str.
+//  При написании данного кода, позаимствуйте у объека Array метод map.
+// let str = "JavaScript";
+
+// function map(str) {
+//   let arr = str.split("");
+//   console.log(arr);
+//   let newArr = arr.map((item, i) => {
+//     if (arr[i - 1] === undefined) {
+//       return item.concat(arr[i + 1]);
+//     } else if (arr[i + 1] === undefined) {
+//       return arr[i - 1].concat(item);
+//     } else {
+//       return arr[i - 1].concat(item).concat(arr[i + 1]);
+//     }
+//   });
+//   return newArr;
+// }
+// console.log(map(str));
