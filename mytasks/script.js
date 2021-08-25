@@ -423,3 +423,58 @@
 
 // let str = "Каждый охотник желает знать, где сидит фазан.";
 // console.log(firstLetters(str));
+
+//Дан массив с числами. Найдите сумму этих чисел
+// function sum(arr) {
+//   let result = arr.reduce((result, item) => result + item, 0);
+//   return result;
+// }
+// console.log(sum([2, 2, 5, 11, -2]));
+
+// Дан массив с числами. Найдите сумму первых N элементов до первого нуля.
+// Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
+
+// function sum(arr) {
+//   let zeroFound = false;
+//   let result = arr.reduce((result, item) => {
+//     if (item === 0) {
+//       zeroFound = true;
+//     }
+//     if (!zeroFound) {
+//       return result + item;
+//     }
+
+//     return result;
+//   }, 0);
+//   return result;
+// }
+// console.log(sum([1, 1, 0, 0, 4, 5, 6]));
+
+// function sum(arr) {
+//   let result = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === 0) {
+//       break;
+//     }
+//     result = result + arr[i];
+//   }
+//   return result;
+// }
+// console.log(sum([1, 2, 3, 0, 4, 5, 6]));
+
+//Имеется массив простых чисел: numbers = [2, 3, 5, 7, 11, 13, 17, 19].
+//  Использую метод reduce() напишите функцию currentSums(numbers),
+//   которая возвращает новый массив из такого же числа элементов,
+//   в котором на каждой позиции будет находиться сумма элементов массива numbers до этой позиции включительно.
+// currentSums(numbers); // [2, 2+3, 2+3+5, 2+3+5+7, 2+3+5+7+11, 2+3+5+7+11+13, 2+3+5+7+11+13+17] = [ 2,5,10,17,28,41,58]
+
+// function currentSums(numbers) {
+//   let newNumbers = [];
+//   let number = numbers.reduce((total, item) => {
+//     return {total = total + item;
+//             newNumbers.push(total)};
+//   }, 0);
+//   return number;
+// }
+// let numbers = [2, 3, 5, 7, 11, 13, 17, 19];
+// console.log(currentSums(numbers)); // [2, 2+3, 2+3+5, 2+3+5+7, 2+3+5+7+11, 2+3+5+7+11+13, 2+3+5+7+11+13+17] = [ 2,5,10,17,28,41,58])
