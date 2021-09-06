@@ -478,3 +478,23 @@
 // }
 // let numbers = [2, 3, 5, 7, 11, 13, 17, 19];
 // console.log(currentSums(numbers)); // [2, 2+3, 2+3+5, 2+3+5+7, 2+3+5+7+11, 2+3+5+7+11+13, 2+3+5+7+11+13+17] = [ 2,5,10,17,28,41,58])
+
+// let userInfo = {
+//   name: "Вася",
+//   age: 30,
+//   "likes js": true,
+// };
+// console.log(userInfo["likes js"]);
+
+//вася 30 ---6
+// wrong [] --7
+
+//45 ---4
+//Вася --5
+
+let userInfo = {};
+userInfo.name = "Вася";
+userInfo.age = 30;
+userInfo.name = "Lena";
+delete userInfo.name;
+console.log(userInfo);
