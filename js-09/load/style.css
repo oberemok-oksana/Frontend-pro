@@ -1,0 +1,24 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.spinner {
+  position: absolute;
+  margin: 0 auto;
+  border: 16px solid lightyellow;
+  border-top: 16px solid pink;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+.img {
+  width: 100%;
+}
