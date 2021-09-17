@@ -1,22 +1,22 @@
+class Note {
+  constructor(title, content) {
+    this.title = title;
+    this.content = content;
+  }
+}
+
+class Person {
+  constructor(name) {
+    this.name = name;
+    this.notes = [];
+  }
+
+  addNote(note) {
+    this.notes.push(note);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  class Note {
-    constructor(title, content) {
-      this.title = title;
-      this.content = content;
-    }
-  }
-
-  class Person {
-    constructor(name) {
-      this.name = name;
-      this.notes = [];
-    }
-
-    addNote(note) {
-      this.notes.push(note);
-    }
-  }
-
   const personName = document.querySelector(".person-name");
   const addPersonBtn = document.querySelector(".add-person");
   const people = document.querySelector(".people");
@@ -36,25 +36,29 @@ document.addEventListener("DOMContentLoaded", () => {
     peopleList.forEach((person, i) => {
       const li = document.createElement("li");
       li.innerHTML = `${peopleList[i].name}`;
-      people.appendChild(li);
       li.classList.add("item-background");
       if (person === activePerson) {
         li.classList.add("active");
         wrapperNotes.style.display = "block";
       }
+
       const wrapperIcons = document.createElement("div");
       wrapperIcons.classList.add("wrapper-icons");
-      li.appendChild(wrapperIcons);
+
       const deleteIcon = document.createElement("img");
       deleteIcon.classList.add("icon", "delete");
       deleteIcon.src = "./img/delete_icon.png";
       deleteIcon.alt = "delete button";
-      wrapperIcons.appendChild(deleteIcon);
+
       const nextIcon = document.createElement("img");
       nextIcon.classList.add("icon", "next");
       nextIcon.src = "./img/arrow_icon.png";
       nextIcon.alt = "show more info";
+
+      wrapperIcons.appendChild(deleteIcon);
       wrapperIcons.appendChild(nextIcon);
+      li.appendChild(wrapperIcons);
+      people.appendChild(li);
     });
     notes.innerHTML = "";
     if (activePerson) {
@@ -62,24 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const li = document.createElement("li");
         li.innerHTML = `${note.title}`;
         li.classList.add("item-background");
-        notes.appendChild(li);
+        if (note === activeNote) {
+          li.classList.add("active");
+        }
+
         const wrapperIcons = document.createElement("div");
         wrapperIcons.classList.add("wrapper-icons");
-        li.appendChild(wrapperIcons);
+
         const deleteIcon = document.createElement("img");
         deleteIcon.classList.add("icon", "delete");
         deleteIcon.src = "./img/delete_icon.png";
         deleteIcon.alt = "delete button";
-        wrapperIcons.appendChild(deleteIcon);
+
         const nextIcon = document.createElement("img");
         nextIcon.classList.add("icon", "next");
         nextIcon.src = "./img/arrow_icon.png";
         nextIcon.alt = "show more info";
-        wrapperIcons.appendChild(nextIcon);
 
-        if (note === activeNote) {
-          li.classList.add("active");
-        }
+        wrapperIcons.appendChild(deleteIcon);
+        wrapperIcons.appendChild(nextIcon);
+        li.appendChild(wrapperIcons);
+        notes.appendChild(li);
       });
     } else {
       wrapperNotes.style.display = "none";
@@ -92,10 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const title = document.createElement("div");
       title.classList.add("item-background", "notes-title");
       title.innerHTML = activeNote.title;
-      wrapperNotesContent.appendChild(title);
+
       const content = document.createElement("div");
       content.classList.add("item-background");
       content.innerHTML = activeNote.content;
+
+      wrapperNotesContent.appendChild(title);
       wrapperNotesContent.appendChild(content);
     } else {
       wrapperNotesContent.style.display = "none";
@@ -117,17 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.matches(".delete")) {
       const deleteIcons = document.querySelectorAll(".people .delete");
       deleteIcons.forEach((deleteIcon, i) => {
-        if (peopleList[i] === activePerson) {
-          activePerson = null;
-          activeNote = null;
-          redraw();
-        }
         if (deleteIcon === e.target) {
+          if (peopleList[i] === activePerson) {
+            activePerson = null;
+            activeNote = null;
+          }
+
           peopleList.splice(i, 1);
           redraw();
         }
       });
     }
+
     if (e.target.matches(".next")) {
       const allNextIcons = document.querySelectorAll(".next");
       allNextIcons.forEach((nextIcon, i) => {
@@ -150,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
       activePerson.notes.push(newNote);
       noteTitle.value = "";
       noteContent.value = "";
-
       redraw();
     }
   });
@@ -158,19 +167,17 @@ document.addEventListener("DOMContentLoaded", () => {
   notes.addEventListener("click", (e) => {
     if (e.target.matches(".delete")) {
       const deleteIcons = document.querySelectorAll(".notes .delete");
-
       deleteIcons.forEach((deleteIcon, i) => {
         if (deleteIcon === e.target) {
           if (activePerson.notes[i] === activeNote) {
             activeNote = null;
           }
-
           activePerson.notes.splice(i, 1);
-
           redraw();
         }
       });
     }
+
     if (e.target.matches(".next")) {
       const allNextIcons = document.querySelectorAll(".notes .next");
       allNextIcons.forEach((nextIcon, i) => {
