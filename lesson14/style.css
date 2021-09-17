@@ -6,9 +6,8 @@ body {
 }
 
 .app {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
 }
 

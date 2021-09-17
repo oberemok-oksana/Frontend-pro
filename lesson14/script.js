@@ -85,8 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+    wrapperNotesContent.innerHTML = "";
+
     if (activeNote) {
-      wrapperNotesContent.innerHTML = "";
       const title = document.createElement("div");
       title.classList.add("item-background", "notes-title");
       title.innerHTML = activeNote.title;
@@ -152,7 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       deleteIcons.forEach((deleteIcon, i) => {
         if (deleteIcon === e.target) {
+          if (activePerson.notes[i] === activeNote) {
+            activeNote = null;
+          }
+
           activePerson.notes.splice(i, 1);
+
           redraw();
         }
       });
