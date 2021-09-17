@@ -56,10 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       nextIcon.alt = "show more info";
       wrapperIcons.appendChild(nextIcon);
     });
-
+    notes.innerHTML = "";
     if (activePerson) {
-      notes.innerHTML = "";
-
       activePerson.notes.forEach((note) => {
         const li = document.createElement("li");
         li.innerHTML = `${note.title}`;
@@ -81,13 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (note === activeNote) {
           li.classList.add("active");
-          wrapperNotesContent.style.display = "block";
         }
       });
+    } else {
+      wrapperNotes.style.display = "none";
     }
     wrapperNotesContent.innerHTML = "";
 
     if (activeNote) {
+      wrapperNotesContent.style.display = "block";
+
       const title = document.createElement("div");
       title.classList.add("item-background", "notes-title");
       title.innerHTML = activeNote.title;
@@ -96,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
       content.classList.add("item-background");
       content.innerHTML = activeNote.content;
       wrapperNotesContent.appendChild(content);
+    } else {
+      wrapperNotesContent.style.display = "none";
     }
   }
 
@@ -112,10 +115,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   people.addEventListener("click", (e) => {
     if (e.target.matches(".delete")) {
-      const clickedDeleteIcon = e.target;
       const deleteIcons = document.querySelectorAll(".people .delete");
       deleteIcons.forEach((deleteIcon, i) => {
-        if (deleteIcon === clickedDeleteIcon) {
+        if (peopleList[i] === activePerson) {
+          activePerson = null;
+          activeNote = null;
+          redraw();
+        }
+        if (deleteIcon === e.target) {
           peopleList.splice(i, 1);
           redraw();
         }
@@ -126,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       allNextIcons.forEach((nextIcon, i) => {
         if (nextIcon === e.target) {
           activePerson = peopleList[i];
+          activeNote = null;
         }
       });
       redraw();
@@ -174,8 +182,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// не рисовать форму добавления NOTE пока нет выбранного пользователя
-// не рисовать выбранный note 3я колонка, пока нет выбранного note
-
-// удаление активного пользователя скрывает NOTE и форму добавления NOTE
