@@ -119,6 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
       peopleList.push(newPerson);
       personName.value = "";
       redraw();
+    } else {
+      alert("Please enter more than 1 letter");
     }
   });
 
@@ -161,6 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
       noteTitle.value = "";
       noteContent.value = "";
       redraw();
+    } else {
+      alert("Please enter more than 1 letter");
     }
   });
 
