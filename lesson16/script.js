@@ -58,7 +58,7 @@ class Slider {
 
       currentMargin -= step;
       this.wrapper.style.marginLeft = currentMargin + "%";
-    }, d);
+    }, Slider.FRAME_TIME);
   }
 }
 Slider.FRAME_TIME = 1000 / 60;
