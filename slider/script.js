@@ -48,6 +48,7 @@ sliderLine.addEventListener("transitionend", () => {
 
 dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
+    if (inTransition) return;
     offset = i * imgWidth;
     sliderLine.style.left = -offset + "px";
     const allSelectedDots = document.querySelectorAll(".dots i.active");
