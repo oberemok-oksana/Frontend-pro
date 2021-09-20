@@ -527,3 +527,16 @@
 //     behavior: "smooth",
 //   });
 // }, 1000);  // в css  в предыдущей задаче убрала overflow:auto
+
+//получите координаты любых трех элементов на странице
+const btn = document.querySelector(".btn");
+let btnCoordinates = btn.getBoundingClientRect();
+console.log(btnCoordinates);
+
+const block = document.querySelector(".block");
+let blockCoordinatesTop = block.getBoundingClientRect().top;
+let blockCoordinatesLeft = block.getBoundingClientRect().left;
+let blockCoordinatesWidth = block.getBoundingClientRect().width;
+console.log(blockCoordinatesTop);
+console.log(blockCoordinatesLeft);
+console.log(blockCoordinatesWidth);
