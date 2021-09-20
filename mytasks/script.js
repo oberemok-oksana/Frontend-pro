@@ -511,3 +511,19 @@
 
 // const scrollWidth = offsetWidth - width - clientLeft * 2;
 // console.log(scrollWidth);
+
+//заставьте браузер прокрутиться на 100px сверху
+//спустя 1 секунду после открытия страницы
+// const btn = document.querySelector(".btn");
+
+// btn.addEventListener("click", () => {
+//   clearInterval(timer);
+// });
+
+// let timer = setInterval(() => {
+//   window.scrollBy({
+//     top: 100,
+//     left: 0,
+//     behavior: "smooth",
+//   });
+// }, 1000);  // в css  в предыдущей задаче убрала overflow:auto

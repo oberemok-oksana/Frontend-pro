@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+  overflow: scroll;
+}
 
 .block {
   width: 200px;
@@ -8,5 +11,9 @@
   background-color: pink;
   padding: 10px;
   border: 15px solid black;
-  overflow: auto;
+  /* overflow: auto; */
+}
+
+p {
+  margin-bottom: 20px;
 }
