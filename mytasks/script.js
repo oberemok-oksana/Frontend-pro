@@ -492,9 +492,22 @@
 //45 ---4
 //Вася --5
 
-let userInfo = {};
-userInfo.name = "Вася";
-userInfo.age = 30;
-userInfo.name = "Lena";
-delete userInfo.name;
-console.log(userInfo);
+// let userInfo = {};
+// userInfo.name = "Вася";
+// userInfo.age = 30;
+// userInfo.name = "Lena";
+// delete userInfo.name;
+// console.log(userInfo);
+
+//------------МЕТРИКИ------------//
+//узнать ширину полосы прокрутки
+// const block = document.querySelector(".block");
+// const width = block.clientWidth;
+// const offsetWidth = block.offsetWidth;
+// const clientLeft = block.clientLeft;
+// console.log(width);
+// console.log(offsetWidth);
+// console.log(clientLeft);
+
+// const scrollWidth = offsetWidth - width - clientLeft * 2;
+// console.log(scrollWidth);
