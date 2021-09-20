@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  width: 256px;
+  height: 256px;
+  margin: 30px auto;
+  border: 2px solid black;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-line {
+  display: flex;
+  height: 256px;
+  width: 1280px;
+  background-color: pink;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
+}
+
+.pic {
+  /* display: block; */
+  width: 250px;
+  height: 250px;
+}
+
+.arrows {
+  position: absolute;
+  color: white;
+  opacity: 0.5;
+  top: 50%;
+  font-size: 25px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.left-arrow {
+  left: 10px;
+}
+.arrows:active {
+  transform: scale(1.1);
+}
+
+.dots {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 5;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+}
+
+.dots i {
+  font-size: 10px;
+  color: white;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.dots i:active {
+  color: rgb(109, 102, 102);
+}
+
+.dots i.active {
+  color: rgb(109, 102, 102);
+}

@@ -526,7 +526,7 @@
 //     left: 0,
 //     behavior: "smooth",
 //   });
-// }, 1000);  // в css  в предыдущей задаче убрала overflow:auto
+// }, 1000); // в css  в предыдущей задаче убрала overflow:auto
 
 //получите координаты любых трех элементов на странице
 const btn = document.querySelector(".btn");
