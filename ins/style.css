@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.feed {
+  margin: 0 auto;
+  width: 40%;
+  background-color: beige;
+  height: 100%;
+}
+
+.wrapper_post {
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.person-img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.post-content {
+  max-width: 100%;
+  border: 1px solid grey;
+  padding: 10px;
+}

@@ -17,7 +17,7 @@
   display: flex;
   height: 256px;
   width: 1280px;
-  background-color: pink;
+  background-color: yellowgreen;
   position: relative;
   left: 0;
   transition: all ease 1s;
@@ -69,9 +69,5 @@
 }
 
 .dots i:active {
-  color: rgb(109, 102, 102);
-}
-
-.dots i.active {
   color: rgb(109, 102, 102);
 }
