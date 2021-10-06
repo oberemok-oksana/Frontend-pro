@@ -1,11 +1,11 @@
 class User {
-  constructor(login, bornDate, password) {
+  constructor(login, password, bornDate) {
     this.login = login;
     this.bornDate = bornDate;
     this.password = password;
   }
 
-  static create(u) {
-    return new User(u.login, u["born-date"], null);
+  static create(user) {
+    return new User(user.login, null, user["date_born"]);
   }
 }
