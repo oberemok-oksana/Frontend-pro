@@ -10,11 +10,16 @@ class Contacts {
   init() {
     this.containerMyContacts = document.querySelector(".my-contacts-list");
     this.container = document.querySelector(".add-contact-form");
+    this.findContainer = document.querySelector(".find-contact");
     this.chosenContactInfo = document.querySelector(".chosen-contact");
     this.nameInput = this.container.querySelector("#contact-name");
     this.typeSelect = this.container.querySelector("#options");
     this.valueInput = this.container.querySelector("#contact");
     this.addButton = this.container.querySelector("button");
+    this.findButton = this.findContainer.querySelector(".find-btn");
+    this.resetButton = this.findContainer.querySelector(".reset-btn");
+    this.findSelect = this.findContainer.querySelector("#find-type");
+    this.findInput = this.findContainer.querySelector("#serachInput");
   }
 
   binds() {
@@ -56,6 +61,19 @@ class Contacts {
         // this.chosenContactInfo.innerHTML = contact;
       }
     });
+
+    this.findButton.addEventListener("click", () => {
+      this.findContact(this.findInput.value, this.findSelect.value);
+      this.chosenContactInfo.innerHTML = "";
+      this.findInput.value = "";
+    });
+
+    this.resetButton.addEventListener("click", () => {
+      this.loadContacts().then(() => {
+        this.showContacts();
+        this.chosenContactInfo.innerHTML = "";
+      });
+    });
   }
 
   showContacts() {
@@ -90,6 +108,19 @@ class Contacts {
           this.showContacts();
         });
       }
+    });
+  }
+
+  findContact(name, type) {
+    let search;
+    if (type === "find-by-name") {
+      search = { name: name };
+    } else {
+      search = { value: name };
+    }
+
+    return this.contactService.findContact(search).then(() => {
+      this.showContacts();
     });
   }
 }

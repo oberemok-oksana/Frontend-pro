@@ -34,7 +34,7 @@ class ContactServices {
       });
   }
 
-  findContact() {
+  findContact(search) {
     return fetch(ContactServices.BASE_URL + "contacts/find", {
       method: "POST",
       headers: {
@@ -42,6 +42,7 @@ class ContactServices {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(search),
     })
       .then((response) => response.json())
       .then((json) => {
