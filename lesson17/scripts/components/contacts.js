@@ -3,11 +3,8 @@ class Contacts {
     this.selector = selector;
     this.contactService = contactService;
 
-    // document.addEventListener("DOMContentLoaded", () => {
     this.init();
     this.binds();
-
-    // });
   }
 
   init() {

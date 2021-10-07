@@ -68,7 +68,7 @@
 }
 
 .contacts {
-  position: relative;
+  flex-basis: 15%;
   box-shadow: 1px 2px 1px 1px #777;
   padding: 10px;
 }
@@ -82,7 +82,7 @@
 
 .authorized {
   /* display: none; */
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 45px;
   margin-right: 45px;
 }
@@ -96,10 +96,8 @@
   color: #fff;
 }
 
-.chosen-contact {
-  position: absolute;
-  left: 20%;
-  top: 45%;
+.wrapper {
+  flex-basis: 15%;
   box-shadow: 1px 2px 1px 1px #777;
   padding: 10px;
 }
@@ -115,4 +113,14 @@
   border-radius: 4px;
   margin-bottom: 5px;
   cursor: pointer;
+}
+
+.adding-contacts {
+  flex-basis: 15%;
+}
+
+.find-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

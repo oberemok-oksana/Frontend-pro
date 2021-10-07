@@ -33,6 +33,21 @@ class ContactServices {
         this.contacts = json.contacts;
       });
   }
+
+  findContact() {
+    return fetch(ContactServices.BASE_URL + "contacts/find", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + window.token,
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        this.contacts = json.contacts;
+      });
+  }
 }
 
 ContactServices.BASE_URL = "http://mag-contacts-api.herokuapp.com/";

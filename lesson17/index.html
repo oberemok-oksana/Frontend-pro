@@ -62,7 +62,22 @@
           <h2 class="form__header">My Contacts</h2>
           <ul class="my-contacts-list"></ul>
         </div>
-        <div class="chosen-contact"></div>
+        <div class="wrapper">
+          <h2 class="form__header">Chosen contact</h2>
+          <div class="chosen-contact"></div>
+        </div>
+        <div class="wrapper">
+          <h2 class="form__header">Find contact</h2>
+          <div class="find-contact">
+            <select name="find-type" id="find-type">
+              <option value="find-by-name">Name</option>
+              <option value="find-by-value">Phone/Email</option>
+            </select>
+            <input type="text" id="serachInput" placeholder="Search..." />
+            <button class="btn_success">Find</button>
+          </div>
+        </div>
+
         <div class="adding-contacts">
           <div class="form add-contact-form">
             <h2 class="form__header">Add Contacts</h2>
