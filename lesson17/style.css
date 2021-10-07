@@ -92,7 +92,8 @@
 }
 
 .active-contact {
-  background-color: #5ccccc;
+  background-color: #1d7373;
+  color: #fff;
 }
 
 .chosen-contact {
