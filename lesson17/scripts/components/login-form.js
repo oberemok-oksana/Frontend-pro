@@ -1,7 +1,8 @@
 class LoginForm {
-  constructor(selector, userService) {
+  constructor(selector, userService, contactService) {
     this.selector = selector;
     this.userService = userService;
+    this.contactService = contactService;
 
     document.addEventListener("DOMContentLoaded", () => {
       this.init();
@@ -32,9 +33,11 @@ class LoginForm {
           alert("Please,type your data.");
         } else {
           this.successLogin();
-          this.userService.token = response.token;
+          window.token = response.token;
           this.unauthorizedScreen.style.display = "none";
           this.authorizedScreen.style.display = "block";
+
+          new Contacts("", this.contactService);
         }
       }
     });

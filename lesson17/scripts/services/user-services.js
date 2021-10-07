@@ -1,8 +1,4 @@
 class UserServices {
-  constructor() {
-    this.token = null;
-  }
-
   getAll() {
     return fetch(UserServices.BASE_URL + "users")
       .then((response) => response.json())
@@ -34,33 +30,6 @@ class UserServices {
         login: name,
         password: password,
       }),
-    }).then((response) => response.json());
-  }
-
-  addContact(name, type, value) {
-    return fetch(UserServices.BASE_URL + "contacts/add", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + this.token,
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        type: type,
-        value: value,
-      }),
-    }).then((response) => response.json());
-  }
-
-  getMyContacts() {
-    return fetch(UserServices.BASE_URL + "contacts", {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + this.token,
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
     }).then((response) => response.json());
   }
 }
