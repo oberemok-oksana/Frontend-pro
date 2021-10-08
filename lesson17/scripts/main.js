@@ -3,4 +3,4 @@ let contactService = new ContactServices();
 let registerForm = new RegisterForm(".register-form", userService);
 
 let loginForm = new LoginForm(".login-form", userService, contactService);
-// let newContact = new Contacts(".add-contact-form", contactService);
+let exitBtn = new ExitBtn();

@@ -7,6 +7,7 @@
 }
 
 .exit {
+  display: none;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
@@ -123,4 +124,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+label {
+  min-width: 80px;
 }

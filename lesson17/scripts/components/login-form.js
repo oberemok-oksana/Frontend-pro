@@ -17,6 +17,7 @@ class LoginForm {
     this.button = this.container.querySelector("button");
     this.unauthorizedScreen = document.querySelector(".unauthorized-screen");
     this.authorizedScreen = document.querySelector(".authorized-screen");
+    this.exitButton = document.querySelector(".exit");
   }
 
   binds() {
@@ -38,6 +39,8 @@ class LoginForm {
           this.authorizedScreen.style.display = "block";
 
           new Contacts("", this.contactService);
+
+          this.exitButton.style.display = "block";
         }
       }
     });
