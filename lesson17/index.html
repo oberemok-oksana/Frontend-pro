@@ -15,7 +15,7 @@
     <div class="unauthorized-screen">
       <div class="row">
         <div class="row__col">
-          <div class="form register-form">
+          <form class="form register-form">
             <h2 class="form__header">Register</h2>
             <div class="form__body">
               <div class="form__control">
@@ -24,20 +24,24 @@
               </div>
               <div class="form__control">
                 <label for="register_user_password">Password</label>
-                <input type="text" class="input" id="register_user_password" />
+                <input
+                  type="password"
+                  class="input"
+                  id="register_user_password"
+                />
               </div>
               <div class="form__control">
                 <label for="register_user_born">Date of birth</label>
                 <input type="text" class="input" id="register_user_born" />
               </div>
               <div class="form__control">
-                <button class="btn btn_success">Register</button>
+                <button type="submit" class="btn btn_success">Register</button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
         <div class="row__col">
-          <div class="form login-form">
+          <form class="form login-form">
             <h2 class="form__header">Login</h2>
             <div class="form__body">
               <div class="form__control">
@@ -46,13 +50,13 @@
               </div>
               <div class="form__control">
                 <label for="login_user_password">Password</label>
-                <input type="text" class="input" id="login_user_password" />
+                <input type="password" class="input" id="login_user_password" />
               </div>
               <div class="form__control">
-                <button class="btn btn_success">Login</button>
+                <button type="submit" class="btn btn_success">Login</button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -68,19 +72,19 @@
         </div>
         <div class="wrapper">
           <h2 class="form__header">Find contact</h2>
-          <div class="find-contact">
+          <form class="find-contact">
             <select name="find-type" id="find-type">
               <option value="find-by-name">Name</option>
               <option value="find-by-value">Phone/Email</option>
             </select>
             <input type="text" id="serachInput" placeholder="Search..." />
-            <button class="btn_success find-btn">Find</button>
-            <button class="btn_success reset-btn">Reset</button>
-          </div>
+            <button type="submit" class="btn_success find-btn">Find</button>
+            <button type="reset" class="btn_success reset-btn">Reset</button>
+          </form>
         </div>
 
         <div class="adding-contacts">
-          <div class="form add-contact-form">
+          <form class="form add-contact-form">
             <h2 class="form__header">Add Contacts</h2>
             <div class="form__body">
               <div class="form__control my-contacts">
@@ -90,10 +94,10 @@
                   <option value="email">Email</option>
                 </select>
                 <input type="text" id="contact" placeholder="Phone/Email" />
-                <button class="btn_success">Add</button>
+                <button type="submit" class="btn_success">Add</button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

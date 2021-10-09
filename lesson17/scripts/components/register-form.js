@@ -21,7 +21,10 @@ class RegisterForm {
   }
 
   binds() {
-    this.button.addEventListener("click", () => this.register());
+    this.container.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this.register();
+    });
   }
 
   register() {

@@ -24,7 +24,8 @@ class Contacts {
   }
 
   binds() {
-    this.addButton.addEventListener("click", () => {
+    this.container.addEventListener("submit", (e) => {
+      e.preventDefault();
       this.addContact(
         this.nameInput.value,
         this.typeSelect.value,
@@ -61,7 +62,8 @@ class Contacts {
       }
     });
 
-    this.findButton.addEventListener("click", () => {
+    this.findContainer.addEventListener("submit", (e) => {
+      e.preventDefault();
       this.findContact(this.findInput.value, this.findSelect.value);
       let allChosen = document.querySelectorAll(".active-contact");
       allChosen.forEach((chosen) => chosen.classList.remove("active-contact"));

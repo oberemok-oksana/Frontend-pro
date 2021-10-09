@@ -22,9 +22,10 @@ class LoginForm {
   }
 
   binds() {
-    this.button.addEventListener("click", () =>
-      this.login(this.loginInput.value, this.passwordInput.value)
-    );
+    this.container.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this.login(this.loginInput.value, this.passwordInput.value);
+    });
   }
 
   login(name, password) {
@@ -32,7 +33,6 @@ class LoginForm {
       if (response.status === "error") alert(response.error);
       else {
         if (this.loginInput.value === "" || this.passwordInput.value === "") {
-          // alert("Please,type your data.");
           this.modalWindow.show("Please, type your data.");
         } else {
           this.successLogin();
