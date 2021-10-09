@@ -30,7 +30,7 @@ class ContactServices {
     })
       .then((response) => response.json())
       .then((json) => {
-        this.contacts = json.contacts;
+        this.contacts = json.contacts.map((contact) => Contact.create(contact));
       });
   }
 
@@ -46,7 +46,7 @@ class ContactServices {
     })
       .then((response) => response.json())
       .then((json) => {
-        this.contacts = json.contacts;
+        this.contacts = json.contacts.map((contact) => Contact.create(contact));
       });
   }
 }
