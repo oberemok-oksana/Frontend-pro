@@ -38,10 +38,7 @@ class Contacts {
 
     this.containerMyContacts.addEventListener("click", (e) => {
       if (e.target.matches(".my-contacts-list-item")) {
-        let allChosen = document.querySelectorAll(".active-contact");
-        allChosen.forEach((chosen) =>
-          chosen.classList.remove("active-contact")
-        );
+        this.removeActiveClass();
         e.target.classList.add("active-contact");
         const contact = this.contactService.contacts.find((contact) => {
           return contact.id === parseInt(e.target.dataset.id);
@@ -65,8 +62,7 @@ class Contacts {
     this.findContainer.addEventListener("submit", (e) => {
       e.preventDefault();
       this.findContact(this.findInput.value, this.findSelect.value);
-      let allChosen = document.querySelectorAll(".active-contact");
-      allChosen.forEach((chosen) => chosen.classList.remove("active-contact"));
+      this.removeActiveClass();
       this.chosenContactInfo.innerHTML = "";
       this.findInput.value = "";
     });
@@ -77,6 +73,11 @@ class Contacts {
         this.chosenContactInfo.innerHTML = "";
       });
     });
+  }
+
+  removeActiveClass() {
+    let allChosen = document.querySelectorAll(".active-contact");
+    allChosen.forEach((chosen) => chosen.classList.remove("active-contact"));
   }
 
   showContacts() {

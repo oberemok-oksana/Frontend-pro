@@ -35,12 +35,14 @@ class RegisterForm {
     );
 
     this.userService.register(user).then((response) => {
-      if (response.status === "error") this.registerError(response.error);
-      else {
+      if (response.status === "error") {
+        this.registerError(response.error);
+      } else {
         this.successRegister();
       }
     });
   }
+
   registerError(text) {
     this.modalWindow.show(text);
   }
