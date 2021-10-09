@@ -4,7 +4,7 @@ class ContactServices {
   }
 
   addContact(name, type, value) {
-    return fetch(ContactServices.BASE_URL + "contacts/add", {
+    return fetch(ContactServices.BASE_URL + "add", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + window.token,
@@ -20,7 +20,7 @@ class ContactServices {
   }
 
   getMyContacts() {
-    return fetch(ContactServices.BASE_URL + "contacts", {
+    return fetch(ContactServices.BASE_URL, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + window.token,
@@ -35,7 +35,7 @@ class ContactServices {
   }
 
   findContact(search) {
-    return fetch(ContactServices.BASE_URL + "contacts/find", {
+    return fetch(ContactServices.BASE_URL + "find", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + window.token,
@@ -51,4 +51,4 @@ class ContactServices {
   }
 }
 
-ContactServices.BASE_URL = "http://mag-contacts-api.herokuapp.com/";
+ContactServices.BASE_URL = "http://mag-contacts-api.herokuapp.com/contacts/";
