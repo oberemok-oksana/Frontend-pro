@@ -30,7 +30,7 @@ class LoginForm {
 
   login(name, password) {
     this.userService.login(name, password).then((response) => {
-      if (response.status === "error") alert(response.error);
+      if (response.status === "error") this.modalWindow.show(response.error);
       else {
         if (this.loginInput.value === "" || this.passwordInput.value === "") {
           this.modalWindow.show("Please, type your data.");

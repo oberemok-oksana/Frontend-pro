@@ -105,7 +105,7 @@ class Contacts {
       } else {
         this.modalWindow.show("New contact has been created.");
         this.nameInput.value = "";
-        this.typeSelect.value = "";
+        this.typeSelect.value = "phone";
         this.valueInput.value = "";
         this.contactService.getMyContacts().then(() => {
           this.showContacts();
