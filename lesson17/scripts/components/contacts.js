@@ -58,13 +58,13 @@ class Contacts {
         contactValue.innerHTML = contact.value;
 
         this.chosenContactInfo.append(contactName, contactType, contactValue);
-
-        // this.chosenContactInfo.innerHTML = contact;
       }
     });
 
     this.findButton.addEventListener("click", () => {
       this.findContact(this.findInput.value, this.findSelect.value);
+      let allChosen = document.querySelectorAll(".active-contact");
+      allChosen.forEach((chosen) => chosen.classList.remove("active-contact"));
       this.chosenContactInfo.innerHTML = "";
       this.findInput.value = "";
     });
