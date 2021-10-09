@@ -1,7 +1,8 @@
 class Contacts {
-  constructor(selector, contactService) {
+  constructor(selector, contactService, modalWindow) {
     this.selector = selector;
     this.contactService = contactService;
+    this.modalWindow = modalWindow;
 
     this.init();
     this.binds();
@@ -98,9 +99,9 @@ class Contacts {
         this.typeSelect.value === "" ||
         this.valueInput.value === ""
       ) {
-        alert("Please, fill in all fields. ");
+        this.modalWindow.show("Please, fill in all fields. ");
       } else {
-        alert("New contact has been created.");
+        this.modalWindow.show("New contact has been created.");
         this.nameInput.value = "";
         this.typeSelect.value = "";
         this.valueInput.value = "";
@@ -112,6 +113,10 @@ class Contacts {
   }
 
   findContact(name, type) {
+    if (this.findInput.value === "") {
+      this.modalWindow.show("Please fill in the search field.");
+      return;
+    }
     let search;
     if (type === "find-by-name") {
       search = { name: name };

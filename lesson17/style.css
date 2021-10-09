@@ -21,15 +21,20 @@
 
 .row {
   display: flex;
+  justify-content: center;
+    gap: 100px;
+}
 }
 
 .row__col {
-  flex-grow: 1;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .form {
   box-shadow: 1px 2px 1px 1px #777;
+  padding: 20px;
 }
 
 .form__header {

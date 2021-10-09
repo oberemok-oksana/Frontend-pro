@@ -1,8 +1,9 @@
 class LoginForm {
-  constructor(selector, userService, contactService) {
+  constructor(selector, userService, contactService, modalWindow) {
     this.selector = selector;
     this.userService = userService;
     this.contactService = contactService;
+    this.modalWindow = modalWindow;
 
     document.addEventListener("DOMContentLoaded", () => {
       this.init();
@@ -31,14 +32,15 @@ class LoginForm {
       if (response.status === "error") alert(response.error);
       else {
         if (this.loginInput.value === "" || this.passwordInput.value === "") {
-          alert("Please,type your data.");
+          // alert("Please,type your data.");
+          this.modalWindow.show("Please, type your data.");
         } else {
           this.successLogin();
           window.token = response.token;
           this.unauthorizedScreen.style.display = "none";
           this.authorizedScreen.style.display = "block";
 
-          new Contacts("", this.contactService);
+          new Contacts("", this.contactService, this.modalWindow);
 
           this.exitButton.style.display = "block";
         }
@@ -47,7 +49,7 @@ class LoginForm {
   }
 
   successLogin() {
-    alert("Welcome!");
+    this.modalWindow.show("Welcome!");
     this.loginInput.value = "";
     this.passwordInput.value = "";
   }

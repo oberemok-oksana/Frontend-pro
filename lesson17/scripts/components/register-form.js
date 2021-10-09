@@ -1,7 +1,8 @@
 class RegisterForm {
-  constructor(selector, userService) {
+  constructor(selector, userService, modalWindow) {
     this.selector = selector;
     this.userService = userService;
+    this.modalWindow = modalWindow;
     this.onRegister = () => {};
     document.addEventListener("DOMContentLoaded", () => {
       this.init();
@@ -38,12 +39,14 @@ class RegisterForm {
     });
   }
   registerError(text) {
-    alert(text);
+    this.modalWindow.show(text);
   }
 
   successRegister() {
     this.clearForm();
-    alert("Congratulation! You have been registered successfully.");
+    this.modalWindow.show(
+      "Congratulation! You have been registered successfully."
+    );
     this.onRegister();
   }
 
