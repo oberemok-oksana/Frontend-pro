@@ -1,3 +1,8 @@
-.cvs {
+body {
+  display: flex;
+  justify-content: space-around;
+}
+
+canvas {
   border: 1px solid black;
 }

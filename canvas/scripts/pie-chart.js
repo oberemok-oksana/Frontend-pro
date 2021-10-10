@@ -71,14 +71,12 @@ function fruitAngle(sum, fruit) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let cvs = document.querySelector(".cvs");
+  let cvs = document.querySelector(".pie-chart");
   let context = cvs.getContext("2d");
 
   function createPieChart(fruits) {
     let sum = allFruits(fruits);
-
     let startAngle = 0;
-
     let colorIndex = 0;
     for (let fruit in fruits) {
       context.beginPath();
@@ -93,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       colorIndex += 1;
       context.fill();
       context.fillStyle = "black";
-      context.font = "14px serif";
+      context.font = "14px san-serif";
 
       context.fillText(
         fruit,
