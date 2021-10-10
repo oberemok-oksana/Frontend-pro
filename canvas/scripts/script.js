@@ -2,6 +2,7 @@ let fruits = {
   apple: 20,
   bananas: 30,
   oranges: 50,
+  plums: 40,
 };
 
 const COLORS = [
@@ -81,15 +82,25 @@ document.addEventListener("DOMContentLoaded", () => {
     let colorIndex = 0;
     for (let fruit in fruits) {
       context.beginPath();
-      context.moveTo(250, 150);
+      context.moveTo(250, 250);
       let endAngle =
         startAngle + (Math.PI / 180) * fruitAngle(sum, fruits[fruit]);
-      context.arc(250, 150, 100, startAngle, endAngle, false);
+      context.arc(250, 250, 100, startAngle, endAngle, false);
+
       context.closePath();
 
       context.fillStyle = COLORS[colorIndex];
       colorIndex += 1;
       context.fill();
+      context.fillStyle = "black";
+      context.font = "14px serif";
+
+      context.fillText(
+        fruit,
+        250 * Math.cos(startAngle + (endAngle - startAngle) / 2) * 0.25 + 250,
+        250 * Math.sin(startAngle + (endAngle - startAngle) / 2) * 0.25 + 250
+      );
+
       startAngle = endAngle;
     }
   }
