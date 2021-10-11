@@ -9,21 +9,36 @@ document.addEventListener("DOMContentLoaded", () => {
     context.moveTo(0, 0);
     context.lineTo(0, -config.length);
     context.lineWidth = config.lineWidth;
-    context.strokeStyle = "black";
+    context.strokeStyle = config.color;
     context.stroke();
     context.rotate((-Math.PI / 180) * config.angle * value);
   }
 
   function drawHourClockHand(hour) {
-    drawClockHand(hour, { angle: 30, length: 40, lineWidth: 5 });
+    drawClockHand(hour, {
+      angle: 30,
+      length: 40,
+      lineWidth: 5,
+      color: "black",
+    });
   }
 
   function drawMinuteClockHand(minute) {
-    drawClockHand(minute, { angle: 6, length: 60, lineWidth: 3 });
+    drawClockHand(minute, {
+      angle: 6,
+      length: 60,
+      lineWidth: 3,
+      color: "black",
+    });
   }
 
   function drawSecondClockHand(second) {
-    drawClockHand(second, { angle: 6, length: 75, lineWidth: 1.5 });
+    drawClockHand(second, {
+      angle: 6,
+      length: 75,
+      lineWidth: 1.5,
+      color: "#00B3E6",
+    });
   }
 
   function drawCircle() {
