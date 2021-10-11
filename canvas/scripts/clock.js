@@ -5,25 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function drawClockHand(value, config) {
     context.rotate((Math.PI / 180) * config.angle * value);
-    context.beginPath();
+    context.lineCap = "round";
     context.moveTo(0, 0);
     context.lineTo(0, -config.length);
     context.lineWidth = config.lineWidth;
-    context.closePath();
+    context.strokeStyle = "black";
     context.stroke();
     context.rotate((-Math.PI / 180) * config.angle * value);
   }
 
   function drawHourClockHand(hour) {
-    drawClockHand(hour, { angle: 30, length: 40, lineWidth: 8 });
+    drawClockHand(hour, { angle: 30, length: 40, lineWidth: 5 });
   }
 
   function drawMinuteClockHand(minute) {
-    drawClockHand(minute, { angle: 6, length: 75, lineWidth: 5 });
+    drawClockHand(minute, { angle: 6, length: 60, lineWidth: 3 });
   }
 
   function drawSecondClockHand(second) {
-    drawClockHand(second, { angle: 6, length: 85, lineWidth: 3 });
+    drawClockHand(second, { angle: 6, length: 75, lineWidth: 1.5 });
   }
 
   function drawCircle() {
@@ -34,29 +34,49 @@ document.addEventListener("DOMContentLoaded", () => {
     context.fill();
 
     context.beginPath();
-    context.fillStyle = "black";
+    context.strokeStyle = "#1D7471";
+    context.lineWidth = 15;
     context.arc(0, 0, 100, 0, endAngle);
-    context.closePath();
-
     context.stroke();
+    context.closePath();
+  }
+
+  function drawClockCenter() {
+    context.beginPath();
+    context.arc(0, 0, 7, 0, 2 * Math.PI);
+    context.fillStyle = "#000000";
+    context.fill();
+    context.closePath();
   }
 
   function drawClock() {
     let date = new Date();
     drawCircle();
+    for (let i = 12; i > 0; i--) {
+      drawNumber(i);
+    }
+
     drawHourClockHand(date.getHours());
     drawMinuteClockHand(date.getMinutes());
     drawSecondClockHand(date.getSeconds());
+    drawClockCenter();
+  }
+
+  function drawNumber(hour) {
+    context.textBaseline = "middle";
+    context.textAlign = "center";
+    context.rotate((Math.PI / 180) * 30 * hour);
+    context.translate(0, -80);
+    context.rotate((-Math.PI / 180) * 30 * hour);
+
+    context.font = "14px Arial";
+    context.fillStyle = "black";
+    context.fillText(hour, 0, 0);
+
+    context.rotate((Math.PI / 180) * 30 * hour);
+    context.translate(0, 80);
+    context.rotate((-Math.PI / 180) * 30 * hour);
   }
 
   setInterval(() => drawClock(), 1000);
-
-  // function startAnimation() {
-  //   requestAnimationFrame(() => {
-  //     drawCircle();
-  //     startAnimation();
-  //   });
-  // }
-
-  // startAnimation();
 });
