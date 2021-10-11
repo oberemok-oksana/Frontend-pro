@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     context.fill();
 
     context.beginPath();
-    context.strokeStyle = "#1D7471";
+    context.strokeStyle = "#F53D68";
     context.lineWidth = 15;
     context.arc(0, 0, 100, 0, endAngle);
     context.stroke();
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function drawClock() {
     let date = new Date();
+
     drawCircle();
     for (let i = 12; i > 0; i--) {
       drawNumber(i);
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     context.translate(0, -80);
     context.rotate((-Math.PI / 180) * 30 * hour);
 
-    context.font = "14px Arial";
+    context.font = "bold 18px Arial";
     context.fillStyle = "black";
     context.fillText(hour, 0, 0);
 
