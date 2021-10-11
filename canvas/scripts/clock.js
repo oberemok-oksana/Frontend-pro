@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     context.fill();
 
     context.beginPath();
-    context.strokeStyle = "#F53D68";
+    context.strokeStyle = "#00B3E6";
     context.lineWidth = 15;
     context.arc(0, 0, 100, 0, endAngle);
     context.stroke();

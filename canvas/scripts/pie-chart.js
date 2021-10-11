@@ -2,16 +2,15 @@ let fruits = {
   apple: 20,
   bananas: 30,
   oranges: 50,
-  plums: 40,
 };
 
 const COLORS = [
-  "#FF6633",
-  "#FFB399",
-  "#FF33FF",
   "#FFFF99",
   "#00B3E6",
   "#E6B333",
+  "#FF6633",
+  "#FFB399",
+  "#FF33FF",
   "#3366E6",
   "#999966",
   "#99FF99",
@@ -78,12 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let sum = allFruits(fruits);
     let startAngle = 0;
     let colorIndex = 0;
+    context.translate(250, 250);
+
     for (let fruit in fruits) {
       context.beginPath();
-      context.moveTo(250, 250);
+      context.moveTo(0, 0);
       let endAngle =
         startAngle + (Math.PI / 180) * fruitAngle(sum, fruits[fruit]);
-      context.arc(250, 250, 100, startAngle, endAngle, false);
+      context.arc(0, 0, 100, startAngle, endAngle, false);
 
       context.closePath();
 
@@ -93,11 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
       context.fillStyle = "black";
       context.font = "14px san-serif";
 
-      context.fillText(
-        fruit,
-        250 * Math.cos(startAngle + (endAngle - startAngle) / 2) * 0.25 + 250,
-        250 * Math.sin(startAngle + (endAngle - startAngle) / 2) * 0.25 + 250
-      );
+      context.rotate(startAngle + (endAngle - startAngle) / 2);
+      context.font = "14px Arial";
+      context.fillText(fruit, 30, 0);
+      context.rotate(-(startAngle + (endAngle - startAngle) / 2));
 
       startAngle = endAngle;
     }
